@@ -21,7 +21,8 @@ class AddEditUser extends Component {
       uname : uname,
       upass : upass
     }
-
+    
+    //JSON encoded while passing body and handled in backEnd
     axios.post(`http://localhost:8000/emp`, JSON.stringify(obj2))
       .then(res => {
         console.log(res);
