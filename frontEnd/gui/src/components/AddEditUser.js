@@ -16,10 +16,13 @@ class AddEditUser extends Component {
     obj.uname = uname;
     obj.upass = upass;  
 
-    var dbParam = JSON.parse(JSON.stringify(obj));
+    const obj2 = {
+      uid : uid,
+      uname : uname,
+      upass : upass
+    }
 
-
-    axios.post(`http://localhost:8000/emp`, dbParam )
+    axios.post(`http://localhost:8000/emp`, JSON.stringify(obj2))
       .then(res => {
         console.log(res);
         console.log(res.data);
