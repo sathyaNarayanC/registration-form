@@ -9,7 +9,7 @@ from rest_framework import serializers
 from . import models
 from rest_framework.decorators import api_view
 from django.views.decorators.csrf import ensure_csrf_cookie
-
+import json
 
 class MenuSerializer(serializers.ModelSerializer):
     class Meta:
@@ -21,15 +21,15 @@ class MenuSerializer(serializers.ModelSerializer):
 @api_view(['POST'])
 def emp(request): 
     if request.method == "POST":
-        form = UserForm(request.POST)  
+        form = UserForm(json.loads(request.body)) #json handling for POST 
         if form.is_valid():  
             try:  
                 form.save()  
-                return redirect('/show')  
+                return HttpResponse("OK") 
             except:  
                 pass  
         else:
-            return redirect('/show')
+            return HttpResponse("Form inValid")
     else:  
         form = UserForm()  
     return form 
