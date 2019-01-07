@@ -7,7 +7,7 @@ I'm not importing the frontEnd/gui/node_modules directory as it will many depend
 To install the dependencies follow package.json file.
 
 
-Here is the sample CRUD application with frontEnd reactjs, backEnd python (Django framework for REST) & Postgres database.
+Here is the sample application with frontEnd reactjs, backEnd python (Django framework for REST) & Postgres database.
 
 About application :
 
